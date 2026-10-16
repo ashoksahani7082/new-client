@@ -10,7 +10,7 @@ async function redis(command) {
   return data.result;
 }
 
-async function sendLead(attr, eventId) {
+async function sendSubscribe(attr, eventId) {
   const { META_PIXEL_ID, META_CAPI_ACCESS_TOKEN, META_API_VERSION } = process.env;
   if (!META_PIXEL_ID || !META_CAPI_ACCESS_TOKEN || !META_API_VERSION) throw new Error("Missing Meta CAPI environment variables");
 
@@ -21,7 +21,7 @@ async function sendLead(attr, eventId) {
   if (attr.ip) user_data.client_ip_address = attr.ip;
 
   const event = {
-    event_name: "Lead",
+    event_name: "Subscribe",
     event_time: Math.floor(Date.now() / 1000),
     event_id: eventId,
     action_source: "chat",
@@ -32,7 +32,7 @@ async function sendLead(attr, eventId) {
   const r = await fetch(url, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ data: [event] }) });
   const result = await r.json();
   if (!r.ok || result.error) throw new Error(`Meta CAPI: ${JSON.stringify(result.error || result)}`);
-  console.log("Meta CAPI Lead accepted", JSON.stringify({ eventId, events_received: result.events_received }));
+  console.log("Meta CAPI Subscribe accepted", JSON.stringify({ eventId, events_received: result.events_received }));
   return result;
 }
 
@@ -67,19 +67,19 @@ export default async function handler(req, res) {
       return res.status(200).send("Start processed");
     }
 
-    // A lead is the first actual non-command text message after a tracked /start.
+    // A Subscribe event is sent after the first actual non-command text message after a tracked /start.
     if (!text.trim() || text.trim().startsWith("/")) return res.status(200).send("Not a lead");
     const raw = await redis(["GET", `tg_user:${from.id}`]);
     if (!raw) return res.status(200).send("No tracked attribution");
 
     const attr = typeof raw === "string" ? JSON.parse(raw) : raw;
-    const eventId = `tg_lead_${attr.token}_${from.id}`;
-    const key = `tg_lead_sent:${attr.token}:${from.id}`;
+    const eventId = `tg_subscribe_${attr.token}_${from.id}`;
+    const key = `tg_subscribe_sent:${attr.token}:${from.id}`;
     const claim = await redis(["SET", key, "pending", "NX", "EX", 2592000]);
-    if (claim !== "OK") return res.status(200).send("Lead already claimed");
+    if (claim !== "OK") return res.status(200).send("Subscribe already sent");
 
     try {
-      const result = await sendLead(attr, eventId);
+      const result = await sendSubscribe(attr, eventId);
       await redis(["SET", key, "sent", "EX", 2592000]);
       return res.status(200).json({ ok: true, event_id: eventId, events_received: result.events_received });
     } catch (e) {
