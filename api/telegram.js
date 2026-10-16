@@ -10,6 +10,19 @@ async function redis(command) {
   return data.result;
 }
 
+async function forwardToOwner(message) {
+  const token = process.env.TELEGRAM_BOT_TOKEN;
+  const ownerChatId = process.env.TELEGRAM_OWNER_CHAT_ID;
+  if (!token || !ownerChatId) throw new Error("Missing TELEGRAM_BOT_TOKEN or TELEGRAM_OWNER_CHAT_ID");
+  const r = await fetch("https://api.telegram.org/bot" + token + "/forwardMessage", {
+    method: "POST", headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ chat_id: ownerChatId, from_chat_id: message.chat.id, message_id: message.message_id })
+  });
+  const result = await r.json();
+  if (!r.ok || !result.ok) throw new Error("Telegram forward failed: " + JSON.stringify(result));
+  return result;
+}
+
 async function sendSubscribe(attr, eventId) {
   const { META_PIXEL_ID, META_CAPI_ACCESS_TOKEN, META_API_VERSION } = process.env;
   if (!META_PIXEL_ID || !META_CAPI_ACCESS_TOKEN || !META_API_VERSION) throw new Error("Missing Meta CAPI environment variables");
@@ -79,6 +92,7 @@ export default async function handler(req, res) {
     if (claim !== "OK") return res.status(200).send("Subscribe already sent");
 
     try {
+      await forwardToOwner(msg);
       const result = await sendSubscribe(attr, eventId);
       await redis(["SET", key, "sent", "EX", 2592000]);
       return res.status(200).json({ ok: true, event_id: eventId, events_received: result.events_received });
