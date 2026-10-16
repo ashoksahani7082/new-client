@@ -9,7 +9,7 @@ export default async function handler(req, res) {
     return res.status(500).send("WEBHOOK_SETUP_SECRET is not configured for this deployment");
   }
   if (!suppliedKey || suppliedKey !== configuredKey) {
-    return res.status(401).send("Setup key does not match the Production environment variable");
+    return res.status(401).json({ error: "Setup key mismatch", configuredLength: configuredKey.length, suppliedLength: suppliedKey.length, hint: "Compare the saved Production value with the key in the URL. No secret value is returned." });
   }
 
   // APP_BASE_URL is preferred; fall back to Vercel's production domain when available.
