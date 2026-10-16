@@ -5,11 +5,12 @@ Vercel landing page + Telegram bot private messages + Redis REST/KV + Meta Pixel
 ## Files
 - `index.html`: landing page and browser PageView.
 - `api/telegram-link.js`: creates a unique Telegram deep link and stores click attribution in Redis.
-- `api/telegram.js`: receives Telegram private messages and sends one Meta `Subscribe` event after a tracked user sends their first non-command text message.
+- `api/telegram.js`: receives Telegram private messages and forwards a tracked user's first non-command text message to `TELEGRAM_OWNER_CHAT_ID`, then sends one Meta `Subscribe` event only after Telegram confirms the forward succeeded.
 - `api/setup-webhook.js`: protected endpoint to register Telegram webhook.
 
 ## Vercel environment variables
 - `TELEGRAM_BOT_TOKEN`: secret from BotFather.
+- `TELEGRAM_OWNER_CHAT_ID`: your personal Telegram numeric user/chat ID; start the bot from your personal account first so it can message you.
 - `TELEGRAM_BOT_USERNAME`: bot username without @ (the endpoint also accepts @).
 - `TELEGRAM_WEBHOOK_SECRET`: Telegram webhook secret token; use 1-256 chars from A-Z, a-z, 0-9, underscore, or hyphen.
 - `WEBHOOK_SETUP_SECRET`: separate random secret used only to protect webhook setup.
