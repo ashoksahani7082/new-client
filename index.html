@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contact us on Telegram</title>
+  <meta name="description" content="Continue the conversation with our team on Telegram.">
+  <style>
+    *{box-sizing:border-box}body{margin:0;min-height:100vh;display:grid;place-items:center;padding:24px;background:linear-gradient(135deg,#0f172a,#1d4ed8);font-family:system-ui,-apple-system,sans-serif;color:#f8fafc}
+    main{width:min(100%,520px);padding:36px 28px;text-align:center;background:rgba(255,255,255,.09);border:1px solid rgba(255,255,255,.18);border-radius:24px;box-shadow:0 24px 80px #0003;backdrop-filter:blur(12px)}
+    .logo{width:64px;height:64px;margin:0 auto 20px;display:grid;place-items:center;background:#229ed9;border-radius:20px;font-size:32px}
+    h1{margin:0 0 12px;font-size:clamp(28px,6vw,38px)}p{line-height:1.65;color:#dbeafe}
+    button{width:100%;margin-top:18px;padding:16px;border:0;border-radius:12px;background:#229ed9;color:white;font-weight:700;font-size:16px;cursor:pointer}
+    button:disabled{opacity:.65;cursor:wait}#status{min-height:24px;font-size:14px}
+  </style>
+  <!-- Replace the pixel ID below if this landing page uses a different Meta Pixel. -->
+  <script>
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+    n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}
+    (window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init','837475619388782');
+    fbq('track','PageView');
+  </script>
+</head>
+<body>
+  <main>
+    <div class="logo" aria-hidden="true">➤</div>
+    <h1>Let's Talk on Telegram</h1>
+    <p>Tap below to open our Telegram bot and send us a message. Your enquiry will be counted as a lead only after your message is received.</p>
+    <button id="telegramButton" type="button">Message us on Telegram</button>
+    <p id="status" aria-live="polite"></p>
+  </main>
+  <script>
+    const button=document.getElementById('telegramButton');
+    const status=document.getElementById('status');
+    function cookie(name){
+      const found=document.cookie.split('; ').find(x=>x.startsWith(name+'='));
+      return found?decodeURIComponent(found.slice(name.length+1)):null;
+    }
+    button.addEventListener('click',async()=>{
+      button.disabled=true;status.textContent='Preparing your secure Telegram link…';
+      try{
+        const q=new URLSearchParams(location.search);
+        const payload={
+          fbp:cookie('_fbp'),fbc:cookie('_fbc'),fbclid:q.get('fbclid'),
+          pageUrl:location.href,userAgent:navigator.userAgent,
+          utm_source:q.get('utm_source'),utm_campaign:q.get('utm_campaign'),
+          utm_medium:q.get('utm_medium'),utm_content:q.get('utm_content'),utm_term:q.get('utm_term')
+        };
+        const response=await fetch('/api/telegram-link',{
+          method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)
+        });
+        if(!response.ok)throw new Error('Unable to create link');
+        const data=await response.json();
+        if(!data.url||!data.url.startsWith('https://t.me/'))throw new Error('Invalid Telegram link');
+        location.href=data.url;
+      }catch(e){status.textContent='Could not open Telegram. Please try again.';button.disabled=false;}
+    });
+  </script>
+</body>
+</html>
