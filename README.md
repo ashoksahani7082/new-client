@@ -5,7 +5,7 @@ Vercel landing page + Telegram bot private messages + Redis REST/KV + Meta Pixel
 ## Files
 - `index.html`: landing page and browser PageView.
 - `api/telegram-link.js`: creates a unique Telegram deep link and stores click attribution in Redis.
-- `api/telegram.js`: receives Telegram private messages and sends one Meta `Lead` event after a tracked user sends their first non-command text message.
+- `api/telegram.js`: receives Telegram private messages and sends one Meta `Subscribe` event after a tracked user sends their first non-command text message.
 - `api/setup-webhook.js`: protected endpoint to register Telegram webhook.
 
 ## Vercel environment variables
@@ -34,7 +34,7 @@ Never put tokens in frontend code or commit them to GitHub. Add all environment 
 
 ## Event logic and limitations
 - Browser event: `PageView` on page load.
-- Server event: `Lead` after the first text message from a tracked Telegram user.
+- Server event: `Subscribe` after the first text message from a tracked Telegram user.
 - Button clicks and `/start` do not count as leads.
 - This does not count untracked or previously existing Telegram users as attributed leads. A Telegram user must open the tracked deep link and start the bot before messaging.
 - Current deduplication is one lead per tracking token and Telegram user for 30 days. The webhook update ID also protects against Telegram retries.
