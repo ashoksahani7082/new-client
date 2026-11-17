@@ -84,7 +84,7 @@
     button.addEventListener('click', () => {
       const number = WHATSAPP_NUMBER || window.prompt('Enter the WhatsApp number with country code (example: 919876543210):');
       if (!number) return;
-      const cleanNumber = number.replace(/\\D/g, '');
+      const cleanNumber = number.replace(/\D/g, '');
       if (cleanNumber.length < 10 || cleanNumber.length > 15) {
         status.textContent = 'Please enter a valid WhatsApp number with country code.';
         return;
