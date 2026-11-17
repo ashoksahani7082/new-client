@@ -69,28 +69,15 @@
         <strong>Let's connect on WhatsApp</strong>
         <p>We're ready to hear from you</p>
       </div>
-      <button class="cta" id="whatsappButton" type="button"><i class="fa-brands fa-whatsapp"></i><span>WHATSAPP NOW</span></button>
+      <a class="cta" id="whatsappButton" href="https://walinkgo.com/MahadevSupportTeam" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-whatsapp"></i><span>WHATSAPP NOW</span></a>
       <p id="status" role="status" aria-live="polite"></p>
       <p class="secure"><i class="fa-solid fa-lock"></i> SECURE WHATSAPP CONNECTION</p>
     </section>
     <div class="footer">MAHADEV · OFFICIAL CONTACT PAGE</div>
   </main>
   <script>
-    // Add the WhatsApp number with country code only, without + or spaces.
-    // Example format: 919876543210
-    const WHATSAPP_NUMBER = '';
-    const button = document.getElementById('whatsappButton');
-    const status = document.getElementById('status');
-    button.addEventListener('click', () => {
-      const number = WHATSAPP_NUMBER || window.prompt('Enter the WhatsApp number with country code (example: 919876543210):');
-      if (!number) return;
-      const cleanNumber = number.replace(/\D/g, '');
-      if (cleanNumber.length < 10 || cleanNumber.length > 15) {
-        status.textContent = 'Please enter a valid WhatsApp number with country code.';
-        return;
-      }
-      status.textContent = 'Opening WhatsApp…';
-      window.open('https://wa.me/' + cleanNumber + '?text=' + encodeURIComponent('Hi, I want to connect with Mahadev.'), '_blank', 'noopener,noreferrer');
+    document.getElementById('whatsappButton').addEventListener('click', function () {
+      if (typeof fbq === 'function') fbq('track', 'Contact');
     });
   </script>
 </body>
