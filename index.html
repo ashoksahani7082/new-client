@@ -4,54 +4,50 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#ffffff">
-  <title>Mahadev | WhatsApp Support</title>
-  <meta name="description" content="Continue your conversation with Mahadev on WhatsApp.">
+  <title>Mahadev | WhatsApp</title>
+  <meta name="description" content="Connect with Mahadev on WhatsApp.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
   <style>
     *{box-sizing:border-box}
-    :root{--green:#25d366;--green-dark:#075e54;--text:#111b21;--muted:#667781}
-    html,body{margin:0;min-height:100%;font-family:Inter,Arial,sans-serif;color:var(--text);background:#fff}
-    body{min-height:100vh;display:flex;flex-direction:column}
-    .topbar{height:88px;width:100%;display:flex;align-items:center;justify-content:space-between;padding:0 clamp(22px,4.5vw,76px);border-bottom:1px solid #f0f2f3;background:#fff}
-    .wordmark{display:flex;align-items:center;gap:9px;color:#20c96b;text-decoration:none;font-size:22px;font-weight:750;letter-spacing:-.8px;white-space:nowrap}
-    .wordmark i{font-size:36px}
-    .nav{display:flex;align-items:center;justify-content:center;gap:clamp(18px,3.1vw,54px);margin:0 22px}
-    .nav a{color:#101820;text-decoration:none;font-size:15px;font-weight:500;white-space:nowrap}
-    .nav a:hover{color:#079b51}
-    .nav .external{font-size:11px;margin-left:7px}
-    .actions{display:flex;align-items:center;gap:12px}
-    .pill{height:48px;min-width:112px;padding:0 22px;display:inline-flex;align-items:center;justify-content:center;gap:14px;border:1px solid #15221c;border-radius:30px;color:#111b21;background:#fff;text-decoration:none;font-size:15px;font-weight:500;white-space:nowrap}
-    .pill.green{min-width:145px;background:var(--green);border-color:#17241d}
-    .pill:hover{filter:brightness(.97)}
-    .main{flex:1;display:flex;justify-content:center;align-items:flex-start;padding:84px 20px 55px}
-    .profile{width:min(100%,690px);display:flex;flex-direction:column;align-items:center;text-align:center}
-    .avatar{width:118px;height:118px;border-radius:50%;display:grid;place-items:center;background:#080b09;border:1px solid #e4e8e5;box-shadow:0 2px 7px rgba(0,0,0,.08);color:#e5c96a;position:relative;overflow:hidden}
-    .avatar:before{content:"";position:absolute;inset:8px;border:1px solid rgba(229,201,106,.65);border-radius:50%}
-    .avatar .trident{font-size:49px;line-height:1;color:#e6c96a;text-shadow:0 2px 12px rgba(229,201,106,.3)}
-    .avatar .om{position:absolute;bottom:17px;font-size:10px;letter-spacing:2px;font-weight:800;color:#f5e6ac}
-    h1{margin:42px 0 39px;font-size:27px;line-height:1.2;font-weight:500;letter-spacing:-.5px}
-    .message{width:min(100%,690px);min-height:78px;padding:18px 26px;display:flex;align-items:center;justify-content:center;border-radius:18px;background:#f7f5f4;color:#54616a;font-size:17px;line-height:1.55;overflow-wrap:anywhere}
-    .message .greeting{font-weight:500}
-    .buttons{width:min(100%,322px);display:flex;flex-direction:column;gap:14px;margin-top:40px}
-    .open,.continue{width:100%;height:62px;display:flex;align-items:center;justify-content:center;border-radius:34px;text-decoration:none;font-size:17px;font-weight:500;transition:background .15s,transform .15s}
-    .open{background:var(--green);border:1px solid #14231b;color:#071b10}
-    .continue{background:#fff;border:1px solid #15221c;color:#111b21}
-    .open:hover,.continue:hover{transform:translateY(-1px)}
-    .download-note{display:flex;align-items:center;justify-content:center;gap:11px;margin-top:40px;color:#111b21;font-size:16px;flex-wrap:wrap}
-    .download-note .wa-icon{width:28px;height:28px;display:grid;place-items:center;border-radius:7px;background:#00c853;color:white;font-size:21px}
-    .download-note a{color:#111b21;text-decoration:none;border-bottom:2px solid var(--green);padding-bottom:2px}
-    .download-note a:hover{color:#079b51}
-    @media(max-width:1000px){.nav{gap:17px}.nav a{font-size:13px}.topbar{padding:0 22px}.wordmark{font-size:20px}.actions .pill{min-width:auto;padding:0 16px}}
-    @media(max-width:760px){.topbar{height:70px}.nav{display:none}.wordmark i{font-size:31px}.actions .login{display:none}.actions .pill.green{height:43px;min-width:112px;font-size:14px}.main{padding:62px 18px 45px}.avatar{width:104px;height:104px}.avatar .trident{font-size:44px}h1{margin:34px 0 32px;font-size:25px}.message{min-height:72px;font-size:15px;padding:16px}.buttons{margin-top:34px}.open,.continue{height:57px;font-size:16px}.download-note{margin-top:34px;font-size:14px}}
-    @media(max-width:360px){.actions .pill.green{padding:0 12px;min-width:100px}.main{padding-top:45px}.message{font-size:14px}}
+    :root{--wa:#25d366;--wa-dark:#075e54;--muted:#667781}
+    html{min-height:100%;background:#ffffff}
+    body{margin:0;min-height:100vh;display:flex;align-items:center;justify-content:center;padding:28px 16px;font-family:Inter,Arial,sans-serif;color:#111b21;background:#ffffff;overflow-x:hidden}
+    body:before{content:"";position:fixed;width:420px;height:420px;left:50%;top:-300px;transform:translateX(-50%);border-radius:50%;background:#25d366;filter:blur(130px);opacity:.045;pointer-events:none}
+    .page{width:100%;max-width:510px;position:relative;z-index:1}
+    .card{position:relative;isolation:isolate;overflow:hidden;padding:38px 36px 30px;border:1px solid #e7ece9;border-radius:30px;background:#ffffff;box-shadow:0 18px 55px rgba(17,27,33,.09),inset 0 1px #ffffff}
+    .card:before{content:"";position:absolute;z-index:-1;inset:0 0 auto;height:3px;background:linear-gradient(90deg,transparent,#25d366,#00a884,transparent)}
+    .card:after{content:"";position:absolute;z-index:-1;width:260px;height:260px;right:-160px;top:180px;border-radius:50%;background:#25d366;filter:blur(110px);opacity:.08}
+    .brand-mark{width:124px;height:124px;margin:0 auto 25px;display:grid;place-items:center;position:relative;border-radius:50%;background:#e9f8ef;box-shadow:0 0 0 8px rgba(37,211,102,.07),0 0 35px rgba(37,211,102,.12)}
+    .brand-mark:before{content:"";position:absolute;inset:-5px;border:2px solid transparent;border-top-color:#25d366;border-right-color:#128c7e;border-radius:50%;animation:orbit 4s linear infinite}
+    .brand-mark i{width:78px;height:78px;display:grid;place-items:center;border-radius:50%;background:linear-gradient(145deg,#31e477,#19bd5a);color:#063b24;font-size:42px;box-shadow:0 9px 28px rgba(37,211,102,.23)}
+    @keyframes orbit{to{transform:rotate(360deg)}}
+    .eyebrow{width:max-content;max-width:100%;margin:0 auto 12px;padding:7px 12px;border:1px solid rgba(37,211,102,.2);border-radius:100px;background:rgba(37,211,102,.075);color:#9be9b7;font-size:10px;font-weight:700;letter-spacing:1.8px;text-transform:uppercase}
+    h1{margin:0;text-align:center;color:#111b21;font-size:clamp(34px,8vw,43px);line-height:1.12;font-weight:800;letter-spacing:1.7px}
+    .intro{max-width:365px;margin:13px auto 25px;text-align:center;color:#667781;font-size:14px;line-height:1.75}
+    .features{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:0 0 24px}
+    .feature{min-height:48px;display:flex;align-items:center;justify-content:center;gap:9px;padding:10px 8px;border:1px solid #e6ece8;border-radius:12px;background:#f7f9f8;color:#26352d;font-size:12px;font-weight:650}
+    .feature i{color:var(--wa);font-size:14px}
+    .cta{width:100%;min-height:68px;display:flex;align-items:center;justify-content:center;gap:12px;padding:15px 18px;border:1px solid #16a34a;border-radius:15px;background:#25d366;color:#063b23;text-decoration:none;font-size:17px;font-weight:800;letter-spacing:.65px;box-shadow:0 5px 0 #118a49,0 13px 28px rgba(25,200,95,.18);transition:transform .18s,filter .18s,box-shadow .18s}
+    .cta i{font-size:25px}
+    .cta:hover{filter:brightness(1.06);transform:translateY(-2px);box-shadow:0 7px 0 #118a49,0 16px 32px rgba(25,200,95,.24)}
+    .cta:active{transform:translateY(3px);box-shadow:0 2px 0 #118a49}
+    .connect-panel{margin-top:22px;padding:17px 16px;border:1px solid #d7f2e1;border-radius:14px;background:#f2fbf5;text-align:center}
+    .connect-panel strong{display:block;color:#075e54;font-size:12px;font-weight:750;letter-spacing:1.25px;text-transform:uppercase}
+    .connect-panel p{margin:6px 0 0;color:#667781;font-size:12px;line-height:1.5}
+    .secure{margin:24px 0 0;text-align:center;color:#667781;font-size:10px;font-weight:700;letter-spacing:1.35px}
+    .secure i{margin-right:6px;color:#38d978}
+    .footer{margin-top:15px;text-align:center;color:#86938b;font-size:10px;font-weight:600;letter-spacing:1px}
+    a:focus-visible{outline:3px solid #b4ffd0;outline-offset:5px}
+    @media(max-width:480px){body{padding:16px 12px}.card{padding:32px 20px 26px;border-radius:24px}.brand-mark{width:112px;height:112px;margin-bottom:22px}.brand-mark i{width:72px;height:72px;font-size:38px}.intro{font-size:13px;margin-bottom:21px}.feature{font-size:11px}.cta{min-height:62px;font-size:15px}.connect-panel{margin-top:20px}}
+    @media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important}}
   </style>
   <!-- Meta Pixel -->
   <script>
     !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-    n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)n=f._fbq=n;
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
     n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
     t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}
     (window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
@@ -61,36 +57,28 @@
   <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1085869497595179&ev=PageView&noscript=1"></noscript>
 </head>
 <body>
-  <header class="topbar">
-    <a class="wordmark" href="#" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i><span>WhatsApp</span></a>
-    <nav class="nav" aria-label="Main navigation">
-      <a href="https://www.whatsapp.com/features/">Features <i class="fa-solid fa-chevron-down external"></i></a>
-      <a href="https://www.whatsapp.com/privacy/">Privacy</a>
-      <a href="https://blog.whatsapp.com/">Blog</a>
-      <a href="https://www.whatsapp.com/download/">Apps</a>
-      <a href="https://faq.whatsapp.com/">Help Center <i class="fa-solid fa-arrow-up-right-from-square external"></i></a>
-      <a href="https://business.whatsapp.com/">For Business <i class="fa-solid fa-arrow-up-right-from-square external"></i></a>
-    </nav>
-    <div class="actions">
-      <a class="pill login" href="https://web.whatsapp.com/">Log In <i class="fa-solid fa-chevron-right"></i></a>
-      <a class="pill green" href="https://www.whatsapp.com/download/">Download <i class="fa-solid fa-download"></i></a>
-    </div>
-  </header>
-  <main class="main">
-    <section class="profile" aria-labelledby="profile-name">
-      <div class="avatar" aria-hidden="true"><span class="trident">♆</span><span class="om">ॐ MAHADEV</span></div>
-      <h1 id="profile-name">Mahadev</h1>
-      <div class="message"><span class="greeting">Hi Mahadev! 👋 Welcome. How can we help you today?</span></div>
-      <div class="buttons">
-        <a class="open" id="whatsappButton" href="https://walinkgo.com/MahadevSupportTeam" target="_blank" rel="noopener noreferrer">Open app</a>
-        <a class="continue" href="https://walinkgo.com/MahadevSupportTeam" target="_blank" rel="noopener noreferrer">Continue to WhatsApp Web</a>
+  <main class="page">
+    <section class="card" aria-labelledby="brand-title">
+      <div class="brand-mark" aria-hidden="true"><i class="fa-brands fa-whatsapp"></i></div>
+      <div class="eyebrow">Connect with us</div>
+      <h1 id="brand-title">MAHADEV</h1>
+      <p class="intro">Have a question? Start a conversation with Mahadev directly on WhatsApp. We're ready to hear from you.</p>
+      <div class="features">
+        <div class="feature"><i class="fa-solid fa-comments"></i><span>Direct Chat</span></div>
+        <div class="feature"><i class="fa-solid fa-bolt"></i><span>Quick Connection</span></div>
       </div>
-      <div class="download-note"><span class="wa-icon"><i class="fa-brands fa-whatsapp"></i></span><span>Don't have the app?</span><a href="https://www.whatsapp.com/download/">Download it now</a></div>
+      <a class="cta" id="whatsappButton" href="https://walinkgo.com/MahadevSupportTeam" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-whatsapp"></i><span>WHATSAPP NOW</span></a>
+      <div class="connect-panel">
+        <strong>Let's connect on WhatsApp</strong>
+        <p>Tap the green button above to continue</p>
+      </div>
+      <p class="secure"><i class="fa-solid fa-lock"></i> SECURE CONNECTION</p>
     </section>
+    <div class="footer">MAHADEV · WHATSAPP CONTACT</div>
   </main>
   <script>
-    document.querySelectorAll('#whatsappButton,.continue').forEach(function(link){
-      link.addEventListener('click',function(){if(typeof fbq==='function')fbq('track','Contact');});
+    document.getElementById('whatsappButton').addEventListener('click', function () {
+      if (typeof fbq === 'function') fbq('track', 'Contact');
     });
   </script>
 </body>
