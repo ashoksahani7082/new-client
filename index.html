@@ -3,43 +3,45 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#075e54">
-  <title>Mahadev | Connect on WhatsApp</title>
-  <meta name="description" content="Connect with Mahadev directly on WhatsApp.">
+  <meta name="theme-color" content="#071a13">
+  <title>Mahadev | WhatsApp</title>
+  <meta name="description" content="Connect with Mahadev on WhatsApp.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
   <style>
     *{box-sizing:border-box}
-    :root{color-scheme:dark;--green:#25d366;--deep:#075e54;--ink:#07110e}
-    body{margin:0;min-height:100vh;display:grid;place-items:center;padding:24px;background:radial-gradient(ellipse at 50% 5%,#123d30 0,#0a1712 42%,#050907 100%);font-family:'Poppins',system-ui,sans-serif;color:#f5fff8;overflow-x:hidden}
-    body:before,body:after{content:"";position:fixed;width:340px;height:340px;border-radius:50%;filter:blur(110px);opacity:.16;pointer-events:none}
-    body:before{background:#25d366;top:-170px;left:-140px}body:after{background:#00a884;right:-170px;bottom:-170px}
-    .page{width:min(100%,525px);position:relative;z-index:1}
-    .card{position:relative;overflow:hidden;padding:43px 38px 34px;text-align:center;border-radius:34px;border:1px solid rgba(37,211,102,.28);background:linear-gradient(155deg,rgba(22,35,28,.98),rgba(7,14,11,.98));box-shadow:0 28px 90px rgba(0,0,0,.52),inset 0 1px rgba(255,255,255,.04)}
-    .card:before{content:"";position:absolute;inset:0 0 auto;height:2px;background:linear-gradient(90deg,transparent,#25d366,#00a884,transparent);opacity:.8}
-    .logo-wrap{width:142px;height:142px;margin:0 auto 27px;position:relative;display:grid;place-items:center;border-radius:50%;background:radial-gradient(circle,#17251d 57%,#0d1711 58%);box-shadow:0 0 0 9px rgba(37,211,102,.055),0 0 35px rgba(37,211,102,.13)}
-    .logo-wrap:before{content:"";position:absolute;inset:-5px;border-radius:50%;border:3px solid transparent;border-top-color:#25d366;border-right-color:#128c7e;animation:spin 3s linear infinite}
-    .logo{width:88px;height:88px;border-radius:50%;display:grid;place-items:center;background:#25d366;color:#063b25;font-size:47px;box-shadow:0 8px 28px rgba(37,211,102,.24)}
-    @keyframes spin{to{transform:rotate(360deg)}}
-    .eyebrow{display:inline-flex;align-items:center;gap:8px;margin-bottom:12px;padding:7px 13px;border:1px solid rgba(37,211,102,.22);border-radius:99px;background:rgba(37,211,102,.08);color:#8cebb0;font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase}
-    h1{margin:0;color:#fff;font-size:clamp(34px,8vw,43px);line-height:1.12;font-weight:800;letter-spacing:1px}
-    .subtitle{margin:13px auto 25px;max-width:390px;color:#bdc9c1;font-size:14px;line-height:1.8}
-    .trust-row{display:grid;grid-template-columns:1fr 1fr;align-items:center;margin:0 auto 25px;padding:16px 10px;border:1px solid rgba(255,255,255,.10);border-radius:15px;background:rgba(255,255,255,.045);color:#e6eee9;font-size:13px;font-weight:600}
-    .trust-row span+span{border-left:1px solid rgba(255,255,255,.17)}
-    .trust-row i{color:var(--green);margin-right:7px}
-    .connect-panel{margin-bottom:25px;padding:17px 14px;border:1px solid rgba(37,211,102,.28);border-radius:16px;background:linear-gradient(110deg,rgba(37,211,102,.10),rgba(0,168,132,.06))}
-    .connect-panel strong{display:block;color:#dfffea;font-size:12px;letter-spacing:1.5px;text-transform:uppercase}
-    .connect-panel p{margin:6px 0 0;color:#a9bdb1;font-size:12px}
-    .cta{width:100%;min-height:76px;display:flex;align-items:center;justify-content:center;gap:13px;padding:16px;border:0;border-radius:20px;background:#25d366;color:#063b25;text-decoration:none;font-size:18px;font-weight:800;letter-spacing:.5px;box-shadow:0 7px 0 #128c4a,0 13px 30px rgba(37,211,102,.19);transition:transform .18s,filter .18s;cursor:pointer}
-    .cta:hover{filter:brightness(1.06);transform:translateY(-2px)}.cta:active{transform:translateY(3px);box-shadow:0 3px 0 #128c4a}
-    .cta i{font-size:29px}
-    .secure{margin:28px 0 0;color:#75877c;font-size:10px;font-weight:600;letter-spacing:1.2px}
-    .secure i{margin-right:6px;color:#25d366}
-    #status{min-height:20px;margin:12px 0 0;color:#ffcf8a;font-size:12px}
-    .footer{text-align:center;margin-top:16px;color:#64766b;font-size:10px;letter-spacing:.7px}
-    @media(max-width:480px){body{padding:14px}.card{padding:34px 21px 27px;border-radius:27px}.logo-wrap{width:126px;height:126px}.logo{width:79px;height:79px;font-size:42px}.trust-row{font-size:11px}.cta{min-height:68px;font-size:16px}}
+    :root{--wa:#25d366;--wa-dark:#075e54;--muted:#9aaca2}
+    html{min-height:100%;background:#06110c}
+    body{margin:0;min-height:100vh;display:flex;align-items:center;justify-content:center;padding:28px 16px;font-family:Inter,Arial,sans-serif;color:#f4fff8;background:radial-gradient(ellipse at 50% 0%,#123c2b 0%,#0a2117 38%,#06110c 76%);overflow-x:hidden}
+    body:before{content:"";position:fixed;width:420px;height:420px;left:50%;top:-300px;transform:translateX(-50%);border-radius:50%;background:#25d366;filter:blur(130px);opacity:.15;pointer-events:none}
+    .page{width:100%;max-width:510px;position:relative;z-index:1}
+    .card{position:relative;isolation:isolate;overflow:hidden;padding:38px 36px 30px;border:1px solid rgba(67,220,132,.23);border-radius:30px;background:linear-gradient(150deg,rgba(17,39,28,.98),rgba(7,19,13,.99) 72%);box-shadow:0 28px 90px rgba(0,0,0,.48),inset 0 1px rgba(255,255,255,.055)}
+    .card:before{content:"";position:absolute;z-index:-1;inset:0 0 auto;height:3px;background:linear-gradient(90deg,transparent,#25d366,#00a884,transparent)}
+    .card:after{content:"";position:absolute;z-index:-1;width:260px;height:260px;right:-160px;top:180px;border-radius:50%;background:#25d366;filter:blur(110px);opacity:.08}
+    .brand-mark{width:124px;height:124px;margin:0 auto 25px;display:grid;place-items:center;position:relative;border-radius:50%;background:radial-gradient(circle at 50% 45%,#173b29 0%,#10251a 63%,#0b1b12 64%);box-shadow:0 0 0 8px rgba(37,211,102,.055),0 0 40px rgba(37,211,102,.12)}
+    .brand-mark:before{content:"";position:absolute;inset:-5px;border:2px solid transparent;border-top-color:#25d366;border-right-color:#128c7e;border-radius:50%;animation:orbit 4s linear infinite}
+    .brand-mark i{width:78px;height:78px;display:grid;place-items:center;border-radius:50%;background:linear-gradient(145deg,#31e477,#19bd5a);color:#063b24;font-size:42px;box-shadow:0 9px 28px rgba(37,211,102,.23)}
+    @keyframes orbit{to{transform:rotate(360deg)}}
+    .eyebrow{width:max-content;max-width:100%;margin:0 auto 12px;padding:7px 12px;border:1px solid rgba(37,211,102,.2);border-radius:100px;background:rgba(37,211,102,.075);color:#9be9b7;font-size:10px;font-weight:700;letter-spacing:1.8px;text-transform:uppercase}
+    h1{margin:0;text-align:center;color:#fff;font-size:clamp(34px,8vw,43px);line-height:1.12;font-weight:800;letter-spacing:1.7px}
+    .intro{max-width:365px;margin:13px auto 25px;text-align:center;color:#b7c9bd;font-size:14px;line-height:1.75}
+    .features{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:0 0 24px}
+    .feature{min-height:48px;display:flex;align-items:center;justify-content:center;gap:9px;padding:10px 8px;border:1px solid rgba(255,255,255,.09);border-radius:12px;background:rgba(255,255,255,.035);color:#e5f1e9;font-size:12px;font-weight:650}
+    .feature i{color:var(--wa);font-size:14px}
+    .cta{width:100%;min-height:68px;display:flex;align-items:center;justify-content:center;gap:12px;padding:15px 18px;border:1px solid rgba(255,255,255,.12);border-radius:15px;background:linear-gradient(180deg,#32e477 0%,#20c963 100%);color:#063b23;text-decoration:none;font-size:17px;font-weight:800;letter-spacing:.65px;box-shadow:0 5px 0 #118a49,0 13px 28px rgba(25,200,95,.18);transition:transform .18s,filter .18s,box-shadow .18s}
+    .cta i{font-size:25px}
+    .cta:hover{filter:brightness(1.06);transform:translateY(-2px);box-shadow:0 7px 0 #118a49,0 16px 32px rgba(25,200,95,.24)}
+    .cta:active{transform:translateY(3px);box-shadow:0 2px 0 #118a49}
+    .connect-panel{margin-top:22px;padding:17px 16px;border:1px solid rgba(37,211,102,.18);border-radius:14px;background:linear-gradient(110deg,rgba(37,211,102,.085),rgba(0,168,132,.035));text-align:center}
+    .connect-panel strong{display:block;color:#e1ffeb;font-size:12px;font-weight:750;letter-spacing:1.25px;text-transform:uppercase}
+    .connect-panel p{margin:6px 0 0;color:#9db4a5;font-size:12px;line-height:1.5}
+    .secure{margin:24px 0 0;text-align:center;color:#71877a;font-size:10px;font-weight:700;letter-spacing:1.35px}
+    .secure i{margin-right:6px;color:#38d978}
+    .footer{margin-top:15px;text-align:center;color:#64796b;font-size:10px;font-weight:600;letter-spacing:1px}
+    a:focus-visible{outline:3px solid #b4ffd0;outline-offset:5px}
+    @media(max-width:480px){body{padding:16px 12px}.card{padding:32px 20px 26px;border-radius:24px}.brand-mark{width:112px;height:112px;margin-bottom:22px}.brand-mark i{width:72px;height:72px;font-size:38px}.intro{font-size:13px;margin-bottom:21px}.feature{font-size:11px}.cta{min-height:62px;font-size:15px}.connect-panel{margin-top:20px}}
     @media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important}}
   </style>
   <!-- Meta Pixel -->
@@ -57,23 +59,22 @@
 <body>
   <main class="page">
     <section class="card" aria-labelledby="brand-title">
-      <div class="logo-wrap"><div class="logo" aria-hidden="true"><i class="fa-brands fa-whatsapp"></i></div></div>
-      <div class="eyebrow"><i class="fa-solid fa-circle-check"></i> Official Contact</div>
+      <div class="brand-mark" aria-hidden="true"><i class="fa-brands fa-whatsapp"></i></div>
+      <div class="eyebrow">Connect with us</div>
       <h1 id="brand-title">MAHADEV</h1>
-      <p class="subtitle">Connect with Mahadev directly on WhatsApp. Tap the button below to start a conversation with our team.</p>
-      <div class="trust-row">
-        <span><i class="fa-solid fa-shield-halved"></i>Direct Contact</span>
-        <span><i class="fa-solid fa-bolt"></i>Quick Reply</span>
+      <p class="intro">Have a question? Start a conversation with Mahadev directly on WhatsApp. We're ready to hear from you.</p>
+      <div class="features">
+        <div class="feature"><i class="fa-solid fa-comments"></i><span>Direct Chat</span></div>
+        <div class="feature"><i class="fa-solid fa-bolt"></i><span>Quick Connection</span></div>
       </div>
       <a class="cta" id="whatsappButton" href="https://walinkgo.com/MahadevSupportTeam" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-whatsapp"></i><span>WHATSAPP NOW</span></a>
       <div class="connect-panel">
         <strong>Let's connect on WhatsApp</strong>
-        <p>We're ready to hear from you</p>
+        <p>Tap the green button above to continue</p>
       </div>
-      <p id="status" role="status" aria-live="polite"></p>
-      <p class="secure"><i class="fa-solid fa-lock"></i> SECURE WHATSAPP CONNECTION</p>
+      <p class="secure"><i class="fa-solid fa-lock"></i> SECURE CONNECTION</p>
     </section>
-    <div class="footer">MAHADEV · OFFICIAL CONTACT PAGE</div>
+    <div class="footer">MAHADEV · WHATSAPP CONTACT</div>
   </main>
   <script>
     document.getElementById('whatsappButton').addEventListener('click', function () {
